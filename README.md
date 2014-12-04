@@ -6,8 +6,8 @@ Some command shorteners for Git
 Install like this:
 
 ```bash
-cd ~ && git clone https://gist.github.com/botverse/2d1458200db1b84d5620 .gitfonz
-echo "source .gitfonz/gitutils.sh" >> .bash_profile
+cd ~ && git clone git@github.com:botverse/gitfuncs.git .gitfuncs
+echo "source .gitfuncs/gitutils.sh" >> .bash_profile
 ```
 
 ### gc
