@@ -63,3 +63,25 @@ function gb () {
   fi
 }
 
+# $ changedsince [other-branch] [...diffargs]
+function changedsince() {
+  if [[ $# = 0 ]]; then
+    echo "Usage: changesince [target] [...diffargs]"
+    echo "Example: "
+    echo "  changesince master -- src/config"
+    echo "  will tell you what changed in src/config in master branch since"
+    echo "  your current branch diverged"
+    exit 1
+  fi
+
+  target=$1
+  shift
+  current=$(git rev-parse --verify HEAD)
+  common=$(git merge-base $current $target)
+  command="git diff $common $target $@"
+  echo $command
+  eval $command
+}
+
+
+
