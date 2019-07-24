@@ -63,3 +63,6 @@ function gb () {
   fi
 }
 
+function gs () {
+  git branch --sort=-committerdate
+}
